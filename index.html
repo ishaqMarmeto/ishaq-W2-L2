@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Carousel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+  <style>
+    body {
+      transition: background-color 0.5s ease;
+    }
+    @media (min-width: 768px) {
+      .content {
+        display: flex;
+        align-items: center;
+      }
+      .description {
+        flex: 1;
+        padding-right: 20px;
+        
+      }
+      .carousel {
+        flex: 1;
+      }
+    }
+    .social{
+        height: 60px;
+        width: 150px;
+        margin-top: 20px;
+        
+    }
+    #choose{
+        font-size: bold;
+        color: black;
+        font-size: large;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen " id="body">
+
+  <!-- Navigation -->
+  <nav class="w-full py-4 text-white flex justify-between ">
+    <div class="w-2/6 ml-4"><img src="Logo.png"/></div>
+    <div class=" w-4/6 flex justify-around">
+    <a href="#" class="text-black font-bold hover:underline">Shop</a>
+    <a href="#" class="text-black font-bold hover:underline">Brands</a>
+    <a href="#" class="text-black font-bold hover:underline">Contact Us</a>
+    <button class="bg-black px-4 py-2 rounded">Sign Up</button>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <section class="content w-4/5 mt-8">
+    <!-- Description Section -->
+    <div class=" flex flex-col description text-center mb-8 md:text-left md:mb-0">
+      <h1 class="text-4xl text-white font-bold mb-2" id="title"></h1>
+      <div class="flex flex-row text-center">
+        <h2 class="text-2xl text-white mb-4" id="subtitle"></h2>
+        <h1 class=" text-2xl font-bold ml-2">Choose Us</h1>
+      </div>
+      
+      <p class="text-lg mb-4" id="description"></p>
+      <span class="text-3xl font-bold" id="price"></span>
+      <img class="social" src="./social-icons.png"/>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="carousel splide" aria-label="Watch Carousel">
+      <div class="splide__track">
+        <ul class="splide__list" id="splide-list">
+          <!-- Slides will be inserted here dynamically -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
